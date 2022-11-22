@@ -15,7 +15,7 @@ const container = document.getElementById("item_container");
 
 for (let i = 0; i < imgs.length; i++) {
     let imgsElement = imgs[i];
-    
+
     let figure = `
     <figure class="item">
                 <img src="${imgsElement.image}" alt="">
@@ -48,14 +48,14 @@ next.addEventListener("click",
             active++;
             //aggiungi classe active elemento successivo
             items[active].classList.add("active");
-    
-            //fai scomparire pulsante una volta raggiunta l'ultima immagine (ultimo indice array imgs)
-            if (active === imgs.length - 1) {
-                next.classList.add("hidden");
-            } else if (active < imgs.length - 1) { //fai ricomparire pulsante quando sei in mezzo allo slideshow (active non è piu ultimo indice)
-                prev.classList.remove("hidden");
-            }
-        }    
+
+        } else {
+
+            items[active].classList.remove("active");
+            active = 0;
+            items[active].classList.add("active");
+
+        }
     }
 );
 
@@ -71,12 +71,12 @@ prev.addEventListener("click",
             //aggiungi classe active elemento precedente
             items[active].classList.add("active");
             
-            //fai scomparire pulsante una volta raggiunta prima immagine (primo indice array imgs)
-            if (active === 0) {
-                prev.classList.add("hidden");
-            } else if (active > 0) { //fai ricomparire pulsante quando sei in mezzo allo slideshow (active non è piu primo indice)
-                next.classList.remove("hidden");
-            }
-        } 
+        } else {
+
+            items[active].classList.remove("active");
+            active = imgs.length - 1;
+            items[active].classList.add("active");
+    
+        }
     }
 );
