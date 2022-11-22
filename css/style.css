@@ -1,0 +1,68 @@
+/* GENERALI */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* container */
+#wrapper {
+    max-width: 1000px;
+    margin: 200px auto; 
+    position: relative;
+}
+
+.item {
+    height: 500px;
+    display: none;
+    position: relative;
+}
+
+.item.active {
+    display: block;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 45%;
+}
+
+.item_text {
+    position: absolute;
+    width: 40%;
+    bottom: 30px;
+    left: 20px;
+    padding: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* bottoni */
+.prev, .next {
+    background-color:  rgb(160, 155, 155);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    padding: 3px;
+}
+
+.prev {
+    top: 10px;
+}
+
+.next {
+    bottom: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
